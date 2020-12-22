@@ -20,6 +20,12 @@ print(rules)
 print('max:' + str(maxlen))
 
 def buildrule(num,rules,depth,maxlen):
+    # if num == '8':
+    #     r = recparam - 1
+    #     if r <= 0:
+    #         #take first option
+    #         a = buildrule(rules[num][0],rules,depth+1,maxlen,r)
+
     print(depth)
     if depth > maxlen+2:
         return []
@@ -30,9 +36,9 @@ def buildrule(num,rules,depth,maxlen):
 
         # go over all rules
         if len(x.split(' ')) == 3:
-            a = buildrule(x.split(' ')[0],rules,depth+2,maxlen)
-            b = buildrule(x.split(' ')[1],rules,depth+2,maxlen)
-            c = buildrule(x.split(' ')[2],rules,depth+2,maxlen)
+            a = buildrule(x.split(' ')[0],rules,depth+3,maxlen)
+            b = buildrule(x.split(' ')[1],rules,depth+3,maxlen)
+            c = buildrule(x.split(' ')[2],rules,depth+3,maxlen)
             if a == [] or b == [] or c == []:
                 continue
             cartProd = itertools.product(a,b,c)

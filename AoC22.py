@@ -1,5 +1,5 @@
 import queue
-f = open('input22.txt','r')
+f = open('test22_b.txt','r')
 q1 = queue.SimpleQueue()
 q2 = queue.SimpleQueue()
 
@@ -38,7 +38,7 @@ def copyQl(q,l):
     return newq
 
 def recursiveCombat(q1,q2,d):
-    print(d)
+    #print(d)
     snaps = []
     while q1.qsize() > 0 and q2.qsize() > 0:
         q1c = copyQ(q1)
